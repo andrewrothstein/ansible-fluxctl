@@ -1,23 +1,23 @@
 #!/usr/bin/env sh
-VER=1.13.3
+VER=1.14.2
 DIR=~/Downloads
 MIRROR=https://github.com/fluxcd/flux/releases/download/${VER}
 
 dl()
 {
-    OS=$1
-    ARCH=$2
-    PLATFORM=${OS}_${ARCH}
-    URL=$MIRROR/fluxctl_${PLATFORM}
-    LFILE=$DIR/fluxctl_${PLATFORM}_${VER}
+    local os=$1
+    local arch=$2
+    local platform=${os}_${arch}
+    local url=$MIRROR/fluxctl_${platform}
+    local lfile=$DIR/fluxctl_${platform}_${VER}
 
-    if [ ! -e $LFILE ];
+    if [ ! -e $lfile ];
     then
-        wget -q -O $LFILE $URL
+        wget -q -O $lfile $url
     fi
 
-    printf "    # %s\n" $URL
-    printf "    %s: sha256:%s\n" $PLATFORM `sha256sum $LFILE | awk '{print $1}'`
+    printf "    # %s\n" $url
+    printf "    %s: sha256:%s\n" $platform `sha256sum $lfile | awk '{print $1}'`
 }
 
 printf "  '%s':\n" $VER

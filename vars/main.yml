@@ -2,8 +2,7 @@
 # vars file for fluxctl
 fluxctl_platform: '{{ fluxctl_os }}_{{ fluxctl_arch }}'
 
-fluxctl_rexe: fluxctl_{{ fluxctl_platform }}
-fluxctl_url: '{{ fluxctl_mirror }}/{{ fluxctl_ver }}/{{ fluxctl_rexe }}'
+fluxctl_url: '{{ fluxctl_mirror }}/{{ fluxctl_ver }}/fluxctl_{{ fluxctl_platform }}'
 fluxctl_checksum: '{{ fluxctl_checksums[fluxctl_ver][fluxctl_platform] }}'
 
 fluxctl_lexe: fluxctl_{{ fluxctl_platform }}_{{ fluxctl_ver }}
