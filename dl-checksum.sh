@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-VER=1.14.2
+VER=1.15.0
 DIR=~/Downloads
 MIRROR=https://github.com/fluxcd/flux/releases/download/${VER}
 
