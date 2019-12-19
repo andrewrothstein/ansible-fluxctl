@@ -1,15 +1,15 @@
 #!/usr/bin/env sh
-VER=1.15.0
 DIR=~/Downloads
-MIRROR=https://github.com/fluxcd/flux/releases/download/${VER}
+MIRROR=https://github.com/fluxcd/flux/releases/download
 
 dl()
 {
-    local os=$1
-    local arch=$2
-    local platform=${os}_${arch}
-    local url=$MIRROR/fluxctl_${platform}
-    local lfile=$DIR/fluxctl_${platform}_${VER}
+    local ver=$1
+    local os=$2
+    local arch=$3
+    local platform="${os}_${arch}"
+    local url=$MIRROR/$ver/fluxctl_${platform}
+    local lfile=$DIR/fluxctl_${platform}_${ver}
 
     if [ ! -e $lfile ];
     then
@@ -20,11 +20,15 @@ dl()
     printf "    %s: sha256:%s\n" $platform `sha256sum $lfile | awk '{print $1}'`
 }
 
-printf "  '%s':\n" $VER
-dl darwin amd64
-dl linux amd64
-dl linux arm
-dl linux arm64
-dl windows amd64
+dl_ver() {
+    local ver=$1
+    printf "  '%s':\n" $ver
+    dl $ver darwin amd64
+    dl $ver linux amd64
+    dl $ver linux arm
+    dl $ver linux arm64
+    dl $ver windows amd64
+}
 
-
+dl_ver 1.16.0
+dl_ver 1.17.0
