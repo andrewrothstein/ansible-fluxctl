@@ -9,7 +9,7 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: download
+- name: downloading {{ fluxctl_url }} to {{ fluxctl_installed_exe }}
   become: yes
   become_user: root
   get_url:
@@ -17,7 +17,7 @@
     dest: '{{ fluxctl_installed_exe }}'
     checksum: '{{ fluxctl_checksum }}'
     mode: 0755
-- name: link
+- name: linking {{ fluxctl_link }} to {{ fluxctl_installed_exe }}
   become: yes
   become_user: root
   file:
