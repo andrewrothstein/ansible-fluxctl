@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 DIR=~/Downloads
 MIRROR=https://github.com/fluxcd/flux/releases/download
 
@@ -30,4 +31,4 @@ dl_ver() {
     dl $ver windows amd64
 }
 
-dl_ver ${1:-1.24.2}
+dl_ver ${1:-1.24.3}
