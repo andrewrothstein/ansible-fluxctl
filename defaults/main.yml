@@ -1,6 +1,6 @@
 ---
 # defaults file for fluxctl
-fluxctl_ver: 1.25.1
+fluxctl_ver: 1.25.2
 fluxctl_mirror: https://github.com/fluxcd/flux/releases/download
 
 fluxctl_os: linux
@@ -284,3 +284,14 @@ fluxctl_checksums:
     linux_arm64: sha256:1bbdf471444844088514e8907751f2c8d95c4b9894445badeea62266d3ec3294
     # https://github.com/fluxcd/flux/releases/download/1.25.1/fluxctl_windows_amd64
     windows_amd64: sha256:dcc01461e04896a97c4b9290f4717867fc488ef24932a1c7e7752a979832a7b4
+  '1.25.2':
+    # https://github.com/fluxcd/flux/releases/download/1.25.2/fluxctl_darwin_amd64
+    darwin_amd64: sha256:84de3371ad69065ec4f4e425af3a2183d6100e0154580ab4a1059a5a0f5615ed
+    # https://github.com/fluxcd/flux/releases/download/1.25.2/fluxctl_linux_amd64
+    linux_amd64: sha256:78187b55ef3eac5b18cb26b097fbfb0c6525259867525388de6523c8af841e99
+    # https://github.com/fluxcd/flux/releases/download/1.25.2/fluxctl_linux_arm
+    linux_arm: sha256:9a8bf429645432ba3a1c9a136fb807dda52ea534349b4a145a6a2ba69fbb1bf8
+    # https://github.com/fluxcd/flux/releases/download/1.25.2/fluxctl_linux_arm64
+    linux_arm64: sha256:bbf255f123759d3785ba748c1de066efb92d978d8596114449438b3ce9d4bff7
+    # https://github.com/fluxcd/flux/releases/download/1.25.2/fluxctl_windows_amd64
+    windows_amd64: sha256:874ad5d2e4fb4c52e77078c134db79590485fa2ef1b4b75fe7c54a68b0bc91dc
