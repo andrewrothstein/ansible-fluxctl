@@ -10,7 +10,7 @@
       paths:
         - '{{ role_path }}/vars'
 - name: downloading {{ fluxctl_url }} to {{ fluxctl_installed_exe }}
-  become: yes
+  become: true
   become_user: root
   get_url:
     url: '{{ fluxctl_url }}'
@@ -18,7 +18,7 @@
     checksum: '{{ fluxctl_checksum }}'
     mode: 0755
 - name: linking {{ fluxctl_link }} to {{ fluxctl_installed_exe }}
-  become: yes
+  become: true
   become_user: root
   file:
     src: '{{ fluxctl_installed_exe }}'

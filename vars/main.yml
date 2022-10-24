@@ -1,5 +1,7 @@
 ---
 # vars file for fluxctl
+fluxctl_os: '{{ ansible_system | lower }}'
+fluxctl_arch: '{{ fluxctl_arch_map[ansible_architecture] }}'
 fluxctl_platform: '{{ fluxctl_os }}_{{ fluxctl_arch }}'
 
 fluxctl_url: '{{ fluxctl_mirror }}/{{ fluxctl_ver }}/fluxctl_{{ fluxctl_platform }}'
